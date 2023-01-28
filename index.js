@@ -2,7 +2,12 @@ const express = require('express')
 const fs = require('fs')
 
 const app = express()
-const port = 3000
+
+if(!process.env.PORT) {
+    throw new Error("Please provide a Port")
+}
+
+const PORT = process.env.PORT
 
 app.get('/video', (req, res) => {
     const videoPath = './videos/SampleVideo_1280x720_1mb.mp4'
@@ -20,6 +25,6 @@ app.get('/video', (req, res) => {
     })
 })
 
-app.listen(port, () => {
-    console.log('server started at port ', port)
+app.listen(PORT, () => {
+    console.log('server started at port ', PORT)
 })
