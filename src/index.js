@@ -3,11 +3,12 @@ const fs = require('fs')
 
 const app = express()
 
-if(!process.env.PORT) {
+// const PORT = process.env.PORT
+const PORT = 4001
+
+if(!PORT) {
     throw new Error("Please provide a Port")
 }
-
-const PORT = process.env.PORT
 
 app.get('/video', (req, res) => {
     const videoPath = './videos/SampleVideo_1280x720_1mb.mp4'
