@@ -33,3 +33,10 @@ $ npm start
     docker tag video-streaming ankurs.azurecr.io/video-streaming:latest
     docker push ankurs.azurecr.io/video-streaming:latest
     docker run -d -p <host-port>:<container-port> <registry-url>/<image-name>:<version>
+    
+### Azure CLI for K8S
+
+    az account show // current default subscription
+    az account list // all subscriptions
+    az aks get-versions --location westus --output table // list of K8S versions
+
